@@ -40,3 +40,7 @@ ProjectileBullet/.vs/ProjectileBullet/v17/Browse.VC.db-shm
 ProjectileBullet/.vs/ProjectileBullet/v17/Browse.VC.db-wal
 
 ProjectileBullet/.vs/ProjectileBullet/v17/Browse.VC.opendb
+
+*.ipch
+
+ProjectileBullet/.vs/ProjectileBullet/v17/.suo
