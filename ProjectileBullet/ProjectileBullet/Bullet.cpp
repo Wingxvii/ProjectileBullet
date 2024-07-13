@@ -50,7 +50,6 @@ void ABullet::OnHit(AActor* hitActor)
 	if (IsValid(hitHittable))
 	{
 		result = hitHittable->OnHit(baseDamage, currPenetrationScore, currRicochetScore);
-
 	}
 
 	switch (result)

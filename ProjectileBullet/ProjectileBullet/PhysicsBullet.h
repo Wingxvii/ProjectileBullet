@@ -20,13 +20,13 @@ public:
 	// Updates the wind for the bullet
 	void SetWind(FVector dir, float velocity);
 
+	// Called externally by collision system
+	void OnCollisionHit(AActor* hitActor, FImpactInfo impactInfo);
+
 	virtual void Tick(float deltaSeconds) override;
 
 	// Called when bullet is fired
 	virtual void OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation) override;
-
-	// Called when anything is hit by bullet
-	virtual void OnHit(AActor* hitActor) override;
 
 	// Called if nothing is hit before lifetime ends
 	virtual void OnLifetimeEnded();
@@ -54,6 +54,10 @@ protected:
 	// Lifetime before bullet stops 
 	UPROPERTY(EditDefaultsOnly, Category = "Physics Properties")
 	float lifetime = -1.f;
+
+	// How much velocity is conserved upon ricochet
+	UPROPERTY(EditDefaultsOnly, Category = "Physics Properties")
+	float elasticity = 1.f;
 
 private:
 	FVector _windDir = FVector::ZeroVector;

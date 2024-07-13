@@ -23,6 +23,18 @@ void APhysicsBullet::SetWind(FVector dir, float velocity)
 	_windDir = dir;
 }
 
+void APhysicsBullet::OnCollisionHit(AActor* hitActor, FImpactInfo impactInfo)
+{
+	if (ensure(IsValid(hitActor)))
+	{
+		_hitActor = hitActor;
+		_hitPos = impactInfo.Location;
+		_hitNormal = impactInfo.ImpactNormal;
+
+		OnHit(hitActor);
+	}
+}
+
 void APhysicsBullet::Tick(float deltaSeconds)
 {
 	Super::Tick(deltaSeconds);
@@ -51,11 +63,6 @@ void APhysicsBullet::OnShot(AActor* shooter, FVector shotOrigin, FVector shotRot
 	_currentVel = shotRotation * initVelocity;
 }
 
-void APhysicsBullet::OnHit(AActor* hitActor)
-{
-	SetActorTickEnabled(false);
-}
-
 void APhysicsBullet::OnLifetimeEnded()
 {
 	SetActorTickEnabled(false);
@@ -63,12 +70,16 @@ void APhysicsBullet::OnLifetimeEnded()
 
 void APhysicsBullet::OnPenetrate(UBulletHittableComponent* hittable)
 {
-	Super::OnPenetrate(hittable);
-
-
+	if (hittable->GetPenetrationScore() != -1 && penetrationScore != -1)
+	{
+		currPenetrationScore -= hittable->GetPenetrationScore();
+	}
+	// We do nothing with the shot, let it continue
 }
 
 void APhysicsBullet::OnRicochet(UBulletHittableComponent* hittable)
 {
-	Super::OnRicochet(hittable);
+	FVector reflectedVect = UKismetLibrary::GetReflectionVector(UKismetLibrary::Normalize(_currentVel), _hitNormal);
+
+	_currentVel = (_currentVel.Size() * elasticity) * reflectedVect;
 }
