@@ -9,6 +9,8 @@ APhysicsBullet::APhysicsBullet()
 
 void APhysicsBullet::Reset()
 {
+	Super::Reset();
+
 	_windDir = FVector::ZeroVector;
 	_windVel = 0.f;
 	_currentPos = FVector::ZeroVector;
@@ -41,12 +43,12 @@ void APhysicsBullet::Tick(float deltaSeconds)
 	}
 }
 
-void APhysicsBullet::OnShot()
+void APhysicsBullet::OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation)
 {
 	SetActorTickEnabled(true);
 
-	_currentPos = _initPos;
-	_currentVel = _initDir * initVelocity;
+	_currentPos = shotOrigin;
+	_currentVel = shotRotation * initVelocity;
 }
 
 void APhysicsBullet::OnHit(AActor* hitActor)
@@ -57,4 +59,16 @@ void APhysicsBullet::OnHit(AActor* hitActor)
 void APhysicsBullet::OnLifetimeEnded()
 {
 	SetActorTickEnabled(false);
+}
+
+void APhysicsBullet::OnPenetrate(UBulletHittableComponent* hittable)
+{
+	Super::OnPenetrate(hittable);
+
+
+}
+
+void APhysicsBullet::OnRicochet(UBulletHittableComponent* hittable)
+{
+	Super::OnRicochet(hittable);
 }

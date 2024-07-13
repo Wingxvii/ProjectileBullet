@@ -2,6 +2,8 @@
 
 #include "Actor.h"
 
+class UBulletHittableComponent;
+
 /*
 * Hitscan Bullet Base
 */
@@ -20,7 +22,7 @@ public:
 	AActor* GetShooter() const;
 
 	// Called when bullet is fired
-	virtual void OnShot();
+	virtual void OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation);
 
 	// Called when anything is hit by bullet
 	virtual void OnHit(AActor* hitActor);
@@ -28,26 +30,33 @@ public:
 	// Called if nothing is hit
 	virtual void OnMissed();
 
+	// Called if bullet penetrates hittable
+	virtual void OnPenetrate(UBulletHittableComponent* hittable);
+
+	// Called if bullet Ricochets off hittable
+	virtual void OnRicochet(UBulletHittableComponent* hittable);
+
 protected:
 	//damage value before any dropoff
 	UPROPERTY(EditDefaultsOnly, Category = "Properties")
 	float baseDamage = 0.f;
 
-	//0-1 percent accuracy for shot path
 	UPROPERTY(EditDefaultsOnly, Category = "Properties")
-	float accuracty = 0.f;
+	int penetrationScore = 0;
 
-	//Distance for the raycast (m)
 	UPROPERTY(EditDefaultsOnly, Category = "Properties")
-	float maxRange = 1000.f;
+	int ricochetScore = 0;
 
 private:
 	TWeakObjectPtr<AActor> _shooter = nullptr;
 	TWeakObjectPtr<AActor> _hitActor = nullptr;
 
-	FVector _initPos = FVector::ZeroVector;
 	FVector _initDir = FVector::ZeroVector;
 	FVector _hitPos = FVector::ZeroVector;
+	FVector _hitNormal = FVector::ZeroVector;
+
+	int currPenetrationScore = 0;
+	int currRicochetScore = 0;
 
 	bool _hit = false;
 };

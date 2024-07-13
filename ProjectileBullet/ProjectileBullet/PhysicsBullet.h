@@ -23,13 +23,19 @@ public:
 	virtual void Tick(float deltaSeconds) override;
 
 	// Called when bullet is fired
-	virtual void OnShot() override;
+	virtual void OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation) override;
 
 	// Called when anything is hit by bullet
 	virtual void OnHit(AActor* hitActor) override;
 
 	// Called if nothing is hit before lifetime ends
 	virtual void OnLifetimeEnded();
+
+	// Called if bullet penetrates hittable
+	virtual void OnPenetrate(UBulletHittableComponent* hittable) override;
+
+	// Called if bullet Ricochets off hittable
+	virtual void OnRicochet(UBulletHittableComponent* hittable) override;
 
 protected:
 
@@ -45,7 +51,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Physics Properties")
 	float gravity = -1.f;
 
-	// Lifetime before bullet stops moving
+	// Lifetime before bullet stops 
 	UPROPERTY(EditDefaultsOnly, Category = "Physics Properties")
 	float lifetime = -1.f;
 
