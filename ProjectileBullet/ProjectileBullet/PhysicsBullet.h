@@ -26,16 +26,19 @@ public:
 	virtual void Tick(float deltaSeconds) override;
 
 	// Called when bullet is fired
-	virtual void OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation) override;
+	virtual void Authority_OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation) override;
 
 	// Called if nothing is hit before lifetime ends
 	virtual void OnLifetimeEnded();
 
 	// Called if bullet penetrates hittable
-	virtual void OnPenetrate(UBulletHittableComponent* hittable) override;
+	virtual void Authority_OnPenetrate(UBulletHittableComponent* hittable) override;
 
 	// Called if bullet Ricochets off hittable
-	virtual void OnRicochet(UBulletHittableComponent* hittable) override;
+	virtual void Authority_OnRicochet(UBulletHittableComponent* hittable) override;
+
+	UFUNCTION(Client, Reliable)
+	void Client_OnShot();
 
 protected:
 
@@ -60,11 +63,16 @@ protected:
 	float elasticity = 1.f;
 
 private:
-	FVector _windDir = FVector::ZeroVector;
-	float _windVel = 0.f;
+	FVector authority_windDir = FVector::ZeroVector;
+	float authority_windVel = 0.f;
 
+	UPROPERTY(Replicated)
 	FVector _currentPos = FVector::ZeroVector;
+
+	UPROPERTY(Replicated)
 	FVector _currentVel = FVector::ZeroVector;
+
+	UPROPERTY(Replicated)
 	FVector _currentDir = FVector::ZeroVector;
 
 };

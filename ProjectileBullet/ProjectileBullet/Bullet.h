@@ -22,19 +22,19 @@ public:
 	AActor* GetShooter() const;
 
 	// Called when bullet is fired
-	virtual void OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation);
+	virtual void Authority_OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation);
 
 	// Called when anything is hit by bullet
-	virtual void OnHit(AActor* hitActor);
+	virtual void Authority_OnHit(AActor* hitActor);
 
 	// Called if nothing is hit
 	virtual void OnMissed();
 
 	// Called if bullet penetrates hittable
-	virtual void OnPenetrate(UBulletHittableComponent* hittable);
+	virtual void Authority_OnPenetrate(UBulletHittableComponent* hittable);
 
 	// Called if bullet Ricochets off hittable
-	virtual void OnRicochet(UBulletHittableComponent* hittable);
+	virtual void Authority_OnRicochet(UBulletHittableComponent* hittable);
 
 protected:
 	//damage value before any dropoff
@@ -47,19 +47,23 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Properties")
 	int ricochetScore = 0;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Properties")
-	
-
 private:
+	UPROPERTY(Replicated)
 	TWeakObjectPtr<AActor> _shooter = nullptr;
+
+	UPROPERTY(Replicated)
 	TWeakObjectPtr<AActor> _hitActor = nullptr;
 
+	UPROPERTY(Replicated)
 	FVector _initDir = FVector::ZeroVector;
-	FVector _hitPos = FVector::ZeroVector;
-	FVector _hitNormal = FVector::ZeroVector;
 
-	int currPenetrationScore = 0;
-	int currRicochetScore = 0;
+	UPROPERTY(Replicated)
+	FVector _hitPos = FVector::ZeroVector;
+
+	FVector authority_hitNormal = FVector::ZeroVector;
+
+	int authority_currPenetrationScore = 0;
+	int authority_currRicochetScore = 0;
 
 	bool _hit = false;
 };

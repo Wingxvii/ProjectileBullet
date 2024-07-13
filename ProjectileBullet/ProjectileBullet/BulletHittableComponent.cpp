@@ -4,7 +4,7 @@ UBulletHittableComponent::UBulletHittableComponent()
 {
 }
 
-void UBulletHittableComponent::OnBroken()
+void UBulletHittableComponent::Authority_OnBroken()
 {
 	if (shouldPenetrateOnBroken)
 	{
@@ -12,7 +12,7 @@ void UBulletHittableComponent::OnBroken()
 	}
 }
 
-EHitResult UBulletHittableComponent::OnHit(int damage, int penetration, int ricochet)
+EHitResult UBulletHittableComponent::Authority_OnHit(int damage, int penetration, int ricochet)
 {
 	currentHealth -= damage;
 	UpdateBroken();
@@ -36,20 +36,20 @@ EHitResult UBulletHittableComponent::OnHit(int damage, int penetration, int rico
 	return EHitResult::None;
 }
 
-int UBulletHittableComponent::GetPenetrationScore() const
+int UBulletHittableComponent::Authority_GetPenetrationScore() const
 {
 	return penetrationScore;
 }
 
-int UBulletHittableComponent::GetRicochetScore() const
+int UBulletHittableComponent::Authority_GetRicochetScore() const
 {
 	return ricochetScore;
 }
 
-void UBulletHittableComponent::UpdateBroken()
+void UBulletHittableComponent::Authority_UpdateBroken()
 {
 	if (currentHealth <= 0)
 	{
-		OnBroken();
+		Authority_OnBroken();
 	}
 }

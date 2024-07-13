@@ -22,15 +22,17 @@ class UBulletHittableComponent : public UActorComponent
 public:
 	UBulletHittableComponent();
 
-	virtual void OnBroken();
+	// Called when hittable loses all its health
+	virtual void Authority_OnBroken();
 
-	virtual EHitResult OnHit(int damage, int penetration, int ricochet);
+	// Called when hittable is hit; returns result of hit
+	virtual EHitResult Authority_OnHit(int damage, int penetration, int ricochet);
 
-	int GetPenetrationScore() const;
-	int GetRicochetScore() const;
+	int Authority_GetPenetrationScore() const;
+	int Authority_GetRicochetScore() const;
 
 protected:
-	virtual void UpdateBroken();
+	virtual void Authority_UpdateBroken();
 
 	UPROPERTY(EditDefaultsOnly, Category = "Properties")
 	int baseHealth = 1;

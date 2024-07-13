@@ -6,59 +6,72 @@ ABullet::ABullet()
 {
 }
 
+void ABullet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ABullet, _shooter);
+	DOREPLIFETIME(ABullet, _hitActor);
+	DOREPLIFETIME(ABullet, _initDir);
+	DOREPLIFETIME(ABullet, _hitPos);
+}
+
 AActor* ABullet::GetShooter() const
 {
 	return _shooter;
 }
 
-void ABullet::OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation)
+void ABullet::Authority_OnShot(AActor* shooter, FVector shotOrigin, FVector shotRotation)
 {
-	if (ensure(IsValid(shooter)))
+	if (ensure(HasAuthority()))
 	{
-		_shooter = shooter;
-	}
-
-	_initDir = shotRotation;
-
-	// First send a raycast
-	FCollisionQueryParams queryParams;
-	FHitResult outHit;
-	// Send raycast to all hittable colliders
-	_hit = GetWorld()->LineTraceSingleByChannel(outHit, shotOrigin, shotOrigin + _initDir, ECC_Hittable, queryParams);
-
-	if (_hit)
-	{
-		_hitPos = outHit.Location;
-		_hitNormal = outHit.ImpactNormal;
-
-		if (IsValid(outHit.GetActor))
+		if (ensure(IsValid(shooter)))
 		{
-			_hitActor = outHit.GetActor;
-			OnHit(_hitActor);
+			_shooter = shooter;
 		}
-	}
-	else
-	{
-		OnMissed();
+
+		_initDir = shotRotation;
+
+		// First send a raycast
+		FCollisionQueryParams queryParams;
+		FHitResult outHit;
+		// Send raycast to all hittable colliders
+		_hit = GetWorld()->LineTraceSingleByChannel(outHit, shotOrigin, shotOrigin + _initDir, ECC_Hittable, queryParams);
+
+		if (_hit)
+		{
+			_hitPos = outHit.Location;
+			authority_hitNormal = outHit.ImpactNormal;
+
+			if (IsValid(outHit.GetActor))
+			{
+				_hitActor = outHit.GetActor;
+				Authority_OnHit(_hitActor);
+			}
+		}
+		else
+		{
+			OnMissed();
+		}
 	}
 }
 
-void ABullet::OnHit(AActor* hitActor)
+void ABullet::Authority_OnHit(AActor* hitActor)
 {
 	EHitResult result = EHitResult::None;
 	UBulletHittableComponent* hitHittable = hitActor->GetComponentByClass<UBulletHittableComponent>();
 	if (IsValid(hitHittable))
 	{
-		result = hitHittable->OnHit(baseDamage, currPenetrationScore, currRicochetScore);
+		result = hitHittable->Authority_OnHit(baseDamage, currPenetrationScore, currRicochetScore);
 	}
 
 	switch (result)
 	{
 	case EHitResult::Penetrate:
-		OnPenetrate(hitHittable);
+		Authority_OnPenetrate(hitHittable);
 		break;
 	case EHitResult::Ricochet:
-		OnRicochet(hitHittable);
+		Authority_OnRicochet(hitHittable);
 		break;
 	case EHitResult::None:
 	default:
@@ -72,24 +85,30 @@ void ABullet::OnMissed()
 {
 }
 
-void ABullet::OnPenetrate(UBulletHittableComponent* hittable)
+void ABullet::Authority_OnPenetrate(UBulletHittableComponent* hittable)
 {
-	if (hittable->GetPenetrationScore() != -1 && penetrationScore != -1)
+	if (ensure(HasAuthority()))
 	{
-		currPenetrationScore -= hittable->GetPenetrationScore();
-	}
+		if (hittable->GetPenetrationScore() != -1 && penetrationScore != -1)
+		{
+			_currPenetrationScore -= hittable->GetPenetrationScore();
+		}
 
-	OnShot(_shooter, _hitPos, _initDir);
+		Authority_OnShot(_shooter, _hitPos, _initDir);
+	}
 }
 
-void ABullet::OnRicochet(UBulletHittableComponent* hittable)
+void ABullet::Authority_OnRicochet(UBulletHittableComponent* hittable)
 {
-	if (hittable->GetRicochetScore() != -1 && ricochetScore != -1)
+	if (ensure(HasAuthority()))
 	{
-		currRicochetScore -= hittable->GetRicochetScore();
+		if (hittable->GetRicochetScore() != -1 && ricochetScore != -1)
+		{
+			_currRicochetScore -= hittable->GetRicochetScore();
+		}
+		FVector reflectedVect = UKismetLibrary::GetReflectionVector(_initDir, authority_hitNormal);
+		Authority_OnShot(_shooter, _hitPos, reflectedVect);
 	}
-	FVector reflectedVect = UKismetLibrary::GetReflectionVector(_initDir, _hitNormal);
-	OnShot(_shooter, _hitPos, reflectedVect);
 }
 
 void ABullet::Reset()
@@ -101,6 +120,6 @@ void ABullet::Reset()
 	_shooter = nullptr;
 	_hitActor = nullptr;
 
-	currPenetrationScore = penetrationScore;
-	currRicochetScore = ricochetScore;
+	_currPenetrationScore = penetrationScore;
+	_currRicochetScore = ricochetScore;
 }
