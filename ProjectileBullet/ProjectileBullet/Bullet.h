@@ -47,6 +47,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Properties")
 	int ricochetScore = 0;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Properties")
+	
+
 private:
 	TWeakObjectPtr<AActor> _shooter = nullptr;
 	TWeakObjectPtr<AActor> _hitActor = nullptr;

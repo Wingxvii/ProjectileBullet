@@ -1,0 +1,162 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\UExplosiveComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\UExplosiveComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\UExplosiveComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\UExplosiveComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\BulletHittableComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\BulletHittableComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\Bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\Bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\PhysicsBullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\PhysicsBullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\PhysicsBullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\PhysicsBullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\BulletHittableComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\BulletHittableComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{82D35517-E302-4AD8-8864-242A2FE02F39}|ProjectileBullet\\ProjectileBullet.vcxproj|solutionrelative:ProjectileBullet\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 197,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UExplosiveComponent.cpp",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\UExplosiveComponent.cpp",
+              "RelativeDocumentMoniker": "ProjectileBullet\\UExplosiveComponent.cpp",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\UExplosiveComponent.cpp",
+              "RelativeToolTip": "ProjectileBullet\\UExplosiveComponent.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-13T00:29:23.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UExplosiveComponent.h",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\UExplosiveComponent.h",
+              "RelativeDocumentMoniker": "ProjectileBullet\\UExplosiveComponent.h",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\UExplosiveComponent.h*",
+              "RelativeToolTip": "ProjectileBullet\\UExplosiveComponent.h*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-13T00:26:21.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PhysicsBullet.cpp",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\PhysicsBullet.cpp",
+              "RelativeDocumentMoniker": "ProjectileBullet\\PhysicsBullet.cpp",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\PhysicsBullet.cpp",
+              "RelativeToolTip": "ProjectileBullet\\PhysicsBullet.cpp",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-12T21:36:16.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BulletHittableComponent.cpp",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\BulletHittableComponent.cpp",
+              "RelativeDocumentMoniker": "ProjectileBullet\\BulletHittableComponent.cpp",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\BulletHittableComponent.cpp",
+              "RelativeToolTip": "ProjectileBullet\\BulletHittableComponent.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-12T23:43:57.858Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 203,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bullet.h",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\Bullet.h",
+              "RelativeDocumentMoniker": "ProjectileBullet\\Bullet.h",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\Bullet.h*",
+              "RelativeToolTip": "ProjectileBullet\\Bullet.h*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-12T21:27:01.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BulletHittableComponent.h",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\BulletHittableComponent.h",
+              "RelativeDocumentMoniker": "ProjectileBullet\\BulletHittableComponent.h",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\BulletHittableComponent.h",
+              "RelativeToolTip": "ProjectileBullet\\BulletHittableComponent.h",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-12T22:34:03.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PhysicsBullet.h",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\PhysicsBullet.h",
+              "RelativeDocumentMoniker": "ProjectileBullet\\PhysicsBullet.h",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\PhysicsBullet.h",
+              "RelativeToolTip": "ProjectileBullet\\PhysicsBullet.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-12T21:36:33.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Bullet.cpp",
+              "DocumentMoniker": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\Bullet.cpp",
+              "RelativeDocumentMoniker": "ProjectileBullet\\Bullet.cpp",
+              "ToolTip": "C:\\Users\\turnt\\Documents\\C\u002B\u002B\\ProjectileBullet\\ProjectileBullet\\ProjectileBullet\\Bullet.cpp",
+              "RelativeToolTip": "ProjectileBullet\\Bullet.cpp",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-12T21:04:28.971Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
